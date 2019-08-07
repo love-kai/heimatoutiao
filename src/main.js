@@ -11,8 +11,10 @@ import '@/style/index.less'
 import router from '@/router'
 
 import axios from '@/api'
-Vue.prototype.$http = axios
+import myCom from '@/components'
 
+Vue.use(myCom)
+Vue.prototype.$http = axios
 // 控制台提示信息 开发环境来提示  详细一些
 Vue.config.productionTip = false
 
