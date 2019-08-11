@@ -44,7 +44,7 @@ export default {
     fn (val) {
       // 字符为空字符处理为null
       if (val === '') val = null
-      // 数据提交给父组件使用(子传父)
+      // 数据提交给父组件使用(子传父) 改变数值
       this.$emit('input', val)
     }
   }

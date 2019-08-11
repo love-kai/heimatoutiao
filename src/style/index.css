@@ -2,12 +2,9 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .avatar-uploader {
   text-align: center;
 }
-
-// 上传组件的样式
 .avatar-uploader .el-upload {
   border: 1px dashed #d9d9d9;
   border-radius: 6px;
@@ -15,11 +12,9 @@ body {
   position: relative;
   overflow: hidden;
 }
-
 .avatar-uploader .el-upload:hover {
   border-color: #409EFF;
 }
-
 .avatar-uploader-icon {
   font-size: 28px;
   color: #8c939d;
@@ -28,23 +23,17 @@ body {
   line-height: 178px;
   text-align: center;
 }
-
 .avatar {
   width: 178px;
   height: 178px;
   display: block;
 }
-
-// style/index.less
-// index.less 在quill的样式之前使用。
 .publish-container .ql-editor {
   height: 400px;
 }
-
 .publish-container .ql-toolbar.ql-snow {
   padding: 0 8px;
 }
-
 .my-image .el-dialog__body {
   padding-bottom: 0;
 }
