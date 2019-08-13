@@ -79,7 +79,7 @@ export default {
     }
   },
   created () {
-    // 非父子组件传值(更新名称)
+    // (更新名称)
     eventBus.$on('updateName', (name) => {
       this.name = name// 赋值给当前的name
     })
