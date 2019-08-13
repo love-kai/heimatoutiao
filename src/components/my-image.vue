@@ -12,6 +12,7 @@
             <el-radio-button :label="false">全部</el-radio-button>
             <el-radio-button :label="true">收藏</el-radio-button>
           </el-radio-group>
+          <!-- 列表 -->
           <div class="img-list">
             <!-- :class="{selected:selectedImageUrl===item.url}"
             比对当前的url地址是否一致-->
@@ -69,7 +70,7 @@ export default {
       dialogVisible: false,
       // 控制选中的选项卡 选项卡name的值
       activeName: 'image',
-      // 传递参数
+      // 传递参数(获取素材列表请求参数)
       reqParams: {
         collect: false,
         page: 1,

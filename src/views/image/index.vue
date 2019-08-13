@@ -9,7 +9,7 @@
           <el-radio-button :label="false">全部</el-radio-button>
           <el-radio-button :label="true">收藏</el-radio-button>
         </el-radio-group>
-        <el-button type="success" size="small" @click="openDialog" style="float:right">添加素材</el-button>
+        <el-button type="success" size="small" @click="openDialog=true" style="float:right">添加素材</el-button>
       </div>
       <div class="img_list">
         <div class="img_item" v-for="item in images" :key="item.id">
@@ -30,7 +30,7 @@
         layout="prev, pager, next"
         :total="total"
         :page-size="reqParams.per_page"
-        :current-page=" reqParams.page"
+        :current-page="reqParams.page"
         @current-change="changePager"
       ></el-pagination>
     </el-card>
@@ -131,14 +131,18 @@ export default {
       this.getImages()
     },
     changePager (newPage) {
-      this.reqParams.page = newPage//
+      console.log(1)
+      this.reqParams.page = newPage
       this.getImages()
     },
     async getImages () {
-      const { data: { data } } = await this.$http.get('user/images', { Params: this.reqParams })
+      const {
+        data: { data }
+      } = await this.$http.get('user/images', { params: this.reqParams })
       this.images = data.results
       this.total = data.total_count
     }
+
   }
 }
 </script>
