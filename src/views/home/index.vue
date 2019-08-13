@@ -69,6 +69,7 @@
 
 <script>
 import store from '@/store'
+import eventBus from '@/components/eventBus.js'
 export default {
   data () {
     return {
@@ -78,6 +79,14 @@ export default {
     }
   },
   created () {
+    // 非父子组件传值(更新名称)
+    eventBus.$on('updateName', (name) => {
+      this.name = name// 赋值给当前的name
+    })
+    // 更新头像
+    eventBus.$on('updatePhoto', (photo) => {
+      this.photo = photo// 赋值给当前的name
+    })
     // 本地获取用户信息
     const user = store.getUser()
     this.name = user.name
